@@ -1,4 +1,4 @@
-# Synema – Movie Ticket Booking Platform (Frontend)
+# Synema – Multi-Cinema Movie Booking Platform (Frontend)
 
 ## Overview
 **Synema** is a full-stack movie ticket booking platform designed to support multiple cinemas, multiple screens, and real-time seat-based bookings within a single system. The application focuses on providing a smooth and reliable booking experience for users while offering dedicated management interfaces for cinemas and system administrators.
@@ -216,30 +216,6 @@ Save movies to a personal watchlist for future reference or planning.
 
 10. Cancel Booking  
 Cancel existing bookings if plans change, with automatic release of locked seats.
-
-![User part](./src/assets/readme_assets/screenshot_1092.png)
-![User part](./src/assets/readme_assets/screenshot_1093.png)
-![User part](./src/assets/readme_assets/screenshot_1094.png)
-![User part](./src/assets/readme_assets/screenshot_1095.png)
-![User part](./src/assets/readme_assets/screenshot_1096.png)
-![User part](./src/assets/readme_assets/screenshot_1097.png)
-![User part](./src/assets/readme_assets/screenshot_1098.png)
-![User part](./src/assets/readme_assets/screenshot_1099.png)
-![User part](./src/assets/readme_assets/screenshot_1100.png)
-![User part](./src/assets/readme_assets/screenshot_1101.png)
-![User part](./src/assets/readme_assets/screenshot_1102.png)
-![User part](./src/assets/readme_assets/screenshot_1103.png)
-![User part](./src/assets/readme_assets/screenshot_1104.png)
-![User part](./src/assets/readme_assets/screenshot_1105.png)
-![User part](./src/assets/readme_assets/screenshot_1106.png)
-![User part](./src/assets/readme_assets/screenshot_1107.png)
-![User part](./src/assets/readme_assets/screenshot_1108.png)
-![User part](./src/assets/readme_assets/screenshot_1109.png)
-![User part](./src/assets/readme_assets/screenshot_1110.png)
-![User part](./src/assets/readme_assets/screenshot_1111.png)
-![User part](./src/assets/readme_assets/screenshot_1112.png)
-![User part](./src/assets/readme_assets/screenshot_1113.png)
-![User part](./src/assets/readme_assets/screenshot_1114.png)
 
 ### Cinema Features
 Synema includes a dedicated portal for cinema owners to manage their operations. Cinemas can register on the platform, with access granted only after approval by the system administrator. Once approved, cinema users can log in to manage cinema profile details, add and configure screens, select movies to be shown, and create showtimes for each screen.
