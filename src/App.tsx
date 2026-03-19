@@ -45,7 +45,7 @@ import BookingFailure from './components/user/booking/BookingFailure';
 import BookingSuccess from './components/user/booking/BookingSuccess';
 import TimeOutModel from './components/user/booking/TimeOutModel';
 import Trailers from './components/user/home/Trailers';
-import AboutUsPage from './pages/aboutUsPage';
+import AboutUsPage from './pages/AboutUsPage';
 import MoviePage from './pages/MoviePage';
 import CinemaPage from './pages/CinemaPage';
 import SingleCinemaPage from './pages/SingleCinemaPage';
@@ -71,7 +71,7 @@ function App() {
 
   return (
     <>
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={true} newestOnTop={false} closeOnClick pauseOnHover draggable pauseOnFocusLoss theme="dark" toastStyle={{ background: "#121212", color: "#ffffff", borderRadius: "8px", border: "1px solid #2a2a2a", padding: "14px 16px", fontSize: "14.5px", fontFamily: "Poppins, sans-serif", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.45)" }} progressStyle={{ background: "#e50914" }} closeButton={false} />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={true} newestOnTop={false} closeOnClick pauseOnHover draggable pauseOnFocusLoss theme="dark" toastStyle={{ background: "#121212", color: "#ffffff", borderRadius: "8px", border: "1px solid #2a2a2a", padding: "14px 16px", fontSize: "14.5px", fontFamily: "Poppins, sans-serif", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.45)" }} closeButton={false} />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
