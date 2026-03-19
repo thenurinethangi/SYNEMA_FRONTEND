@@ -15,7 +15,7 @@ import { checkIsSeatLock, checkLockedSeats, lockSeats } from '../services/user/s
 import CountdownTimer from '../components/user/booking/CountdownTimer';
 import TimeOutModel from '../components/user/booking/TimeOutModel';
 import LoadingSpinner from '../components/user/LoadingSpinner';
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../context/AuthContext';
 
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store/store";

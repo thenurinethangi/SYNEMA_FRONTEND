@@ -44,9 +44,7 @@ function CinemaContent() {
         }
     }
 
-    function handleNavigateToSingleCinemaPage(e: React.MouseEvent<HTMLDivElement>) {
-        const cinemaId = e.currentTarget.dataset.id;
-
+    function handleNavigateToSingleCinemaPage(cinemaId: string) {
         if (cinemaId) {
             navigate('/cinema/' + cinemaId);
         }
@@ -180,7 +178,7 @@ function CinemaContent() {
                 {filteredCinemas.length > 0
                     ? filteredCinemas.map((cinema: any) => (
                         <div key={cinema._id} className='group cursor-pointer mb-3 w-full'>
-                            <div onClick={handleNavigateToSingleCinemaPage} data-id={cinema._id} className='relative w-[257.5px] h-[205px] rounded-sm'>
+                            <div onClick={() => handleNavigateToSingleCinemaPage(cinema._id)} data-id={cinema._id} className='relative w-[257.5px] h-[205px] rounded-sm'>
                                 <img src={cinema.cinemaImageUrl} className='object-cover w-full h-full object-top transition-transform duration-500 group-hover:scale-105'></img>
                                 <div className="w-full h-full absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent group-hover:from-black/60 group-hover:via-black/25 group-hover:scale-105 transition-all duration-500"></div>
 

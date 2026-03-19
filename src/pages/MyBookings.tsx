@@ -6,7 +6,7 @@ import SignUp from '../components/user/SignUp';
 import OTPModel from '../components/user/OTPModel';
 import { cancelBooking, getMyBookings } from '../services/user/bookingService';
 import { toast } from 'react-toastify';
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from "react-redux";

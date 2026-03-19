@@ -82,9 +82,7 @@ function Movies(props: any) {
         setMovie(filtered);
     }
 
-    async function handleRemoveMovie(e: React.MouseEvent<HTMLButtonElement>) {
-
-        const id = e.currentTarget.dataset.id;
+    async function handleRemoveMovie(id: string) {
         if (!id) {
             return;
         }
@@ -180,7 +178,7 @@ function Movies(props: any) {
                             <button onClick={(e) => { setSelectedMovie(movie); setShowEditModal(true) }} className='w-6.5 h-6.5 rounded-lg bg-[#252525] hover:bg-[#2a2a2a] transition-colors flex items-center justify-center group/btn'>
                                 <Edit className='text-gray-500 group-hover/btn:text-gray-400 w-[14px] h-[14px]' />
                             </button>
-                            <button onClick={handleRemoveMovie} data-id={movie._id} className='w-6.5 h-6.5 rounded-lg bg-[#252525] hover:bg-red-900/20 transition-colors flex items-center justify-center group/btn'>
+                            <button onClick={() => handleRemoveMovie(movie._id)} data-id={movie._id} className='w-6.5 h-6.5 rounded-lg bg-[#252525] hover:bg-red-900/20 transition-colors flex items-center justify-center group/btn'>
                                 <Trash className='text-gray-500 group-hover/btn:text-red-500 w-[14px] h-[14px]' />
                             </button>
                         </div>

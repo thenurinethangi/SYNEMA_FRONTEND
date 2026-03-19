@@ -152,8 +152,7 @@ function Showtimes(props: any) {
         return formattedDate;
     }
 
-    function handleNavigateToBookingPage(e: React.MouseEvent<HTMLButtonElement>) {
-        const showtimeId = e.currentTarget.dataset.id;
+    function handleNavigateToBookingPage(showtimeId: string) {
         if (showtimeId) {
             navigate('/booking/' + showtimeId);
         }
@@ -413,7 +412,7 @@ function Showtimes(props: any) {
                             </div>
                             <div className='flex items-center flex-wrap gap-3.5 mt-4'>
                                 {showtimesOfSingleMovie.map((showtime: any) => (
-                                    <div key={showtime._id} onClick={handleNavigateToBookingPage} data-id={showtime._id} className={`w-[310px] h-[79px] ${isTimeNotPast(showtime.time) ? 'border-l-4 border-l-[#cd242c]' : 'border-l-4 border-gray-400 pointer-events-none' } rounded-sm bg-[#2c2c2c] px-2.5 py-2.5 cursor-pointer hover:bg-[#3a3a3a] transition-all duration-400`}>
+                                    <div key={showtime._id} onClick={() => handleNavigateToBookingPage(showtime._id)} data-id={showtime._id} className={`w-[310px] h-[79px] ${isTimeNotPast(showtime.time) ? 'border-l-4 border-l-[#cd242c]' : 'border-l-4 border-gray-400 pointer-events-none' } rounded-sm bg-[#2c2c2c] px-2.5 py-2.5 cursor-pointer hover:bg-[#3a3a3a] transition-all duration-400`}>
                                         <div className='flex items-center gap-2.5'>
                                             <p className='font-medium text-[16.5px] tracking-wide'>{formatToTime12h(showtime.time)}</p>
                                             <div className='text-[12px] font-medium bg-[#dedede] text-black px-2 py-px rounded-[20px]'>{showtime.formatShowing}</div>

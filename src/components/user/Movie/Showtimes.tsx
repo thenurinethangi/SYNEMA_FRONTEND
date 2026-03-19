@@ -105,8 +105,7 @@ function Showtimes(props: any) {
         });
     }
 
-    function handleNavigateToBookingPage(e: React.MouseEvent<HTMLButtonElement>) {
-        const showtimeId = e.currentTarget.dataset.id;
+    function handleNavigateToBookingPage(showtimeId: string) {
         if (showtimeId) {
             navigate('/booking/' + showtimeId);
         }
@@ -258,7 +257,7 @@ function Showtimes(props: any) {
                                             <p className={`pl-1.5 pr-1 text-[23px] font-medium ${isTimeNotPast(t.time) ? '' : 'text-gray-500'}`}>{formatToTime12h(t.time).split(' ')[0]}</p>
                                             <p className={`pr-1.5 pb-1 text-[11px] font-medium self-end ${isTimeNotPast(t.time) ? '' : 'text-gray-500'}`}>{formatToTime12h(t.time).split(' ')[1]}</p>
                                         </div>
-                                        <button onClick={handleNavigateToBookingPage} data-id={t._id} className={`w-full text-[13.7px] font-medium text-black py-1 px-2 rounded-br-xl ${isTimeNotPast(t.time) ? 'bg-red-400 cursor-pointer' : 'bg-gray-500'}`}>Book Now</button>
+                                        <button onClick={() => handleNavigateToBookingPage(t._id)} data-id={t._id} className={`w-full text-[13.7px] font-medium text-black py-1 px-2 rounded-br-xl ${isTimeNotPast(t.time) ? 'bg-red-400 cursor-pointer' : 'bg-gray-500'}`}>Book Now</button>
                                         {/* Hover Tooltip */}
                                         <div className='absolute -top-16 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out group-hover:pointer-events-none z-100'>
                                             <div className='bg-gray-400/85 text-white px-4 py-3 rounded-sm shadow-2xl'>

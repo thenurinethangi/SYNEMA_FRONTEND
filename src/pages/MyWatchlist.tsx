@@ -6,7 +6,7 @@ import SignUp from '../components/user/SignUp';
 import OTPModel from '../components/user/OTPModel';
 import { cancelBooking, getMyBookings } from '../services/user/bookingService';
 import { toast } from 'react-toastify';
-import { useAuth } from '../context/authContext';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { getAllWatchlistMovies, removeMovieFromWatchlist } from '../services/user/watchlistService';
 
@@ -60,18 +60,13 @@ function MyWatchlist() {
         })
     }
 
-    function handleNavigateToMovieDetailsPage(e: React.MouseEvent<HTMLButtonElement>) {
-        const movieId = e.currentTarget.dataset.id;
-
+    function handleNavigateToMovieDetailsPage(movieId: string) {
         if (movieId) {
             navigate('/single/movie/' + movieId);
         }
     }
 
-    async function handleRemoveFromwatchlist(e: React.MouseEvent<HTMLElement>) {
-
-        const id = e.currentTarget.dataset.id;
-
+    async function handleRemoveFromwatchlist(id: string) {
         if (id) {
             try {
                 const res = await removeMovieFromWatchlist({ movieId: id });
@@ -103,7 +98,7 @@ function MyWatchlist() {
                             return (
                                 <div key={wl.movieId._id} className='mb-4'>
                                     <div className='relative w-[203.198px] h-[300.885px]'>
-                                        <Bookmark onClick={handleRemoveFromwatchlist} data-id={wl.movieId._id} className={`text-white/90 w-[22px] h-[25px] absolute right-1 top-1 cursor-pointer z-[100] fill-red-600 stroke-none`} />
+                                        <Bookmark onClick={() => handleRemoveFromwatchlist(wl.movieId._id)} data-id={wl.movieId._id} className={`text-white/90 w-[22px] h-[25px] absolute right-1 top-1 cursor-pointer z-[100] fill-red-600 stroke-none`} />
                                         <img src={wl.movieId.posterImageUrl} className='rounded-sm object-cover w-full h-full object-top'></img>
                                         <div className=" w-full h-full absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent hover:from-black/50 hover:via-black/20 hover:to-transparent transition-all duration-700 ease-in-out"></div>
                                     </div>
@@ -114,7 +109,7 @@ function MyWatchlist() {
                                             <p className='text-[12px] text-[#999] font-medium'>{formatDate(wl.movieId.releaseDate)}</p>
                                         </div>
                                         <div className='flex items-center gap-1 mt-1.5'>
-                                            <Tags onClick={handleNavigateToMovieDetailsPage} data-id={wl.movieId._id} className="text-white/90 w-[22px] h-[22px] cursor-pointer" />
+                                            <Tags onClick={() => handleNavigateToMovieDetailsPage(wl.movieId._id)} data-id={wl.movieId._id} className="text-white/90 w-[22px] h-[22px] cursor-pointer" />
                                         </div>
                                     </div>
                                 </div>
